@@ -20,7 +20,7 @@
             background-color: var(--bg-light);
             margin: 0;
             color: #333;
-            padding-bottom: 80px; /* Espacio para el botón flotante */
+            padding-bottom: 80px;
         }
 
         header {
@@ -39,8 +39,18 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        h1 { margin: 0; font-weight: 900; letter-spacing: -1px; font-size: 2rem; }
-        p.subtitle { font-weight: 400; opacity: 0.9; margin-top: 5px; }
+        h1 {
+            margin: 0;
+            font-weight: 900;
+            letter-spacing: -1px;
+            font-size: 2rem;
+        }
+
+        p.subtitle {
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
 
         .container {
             max-width: 800px;
@@ -65,21 +75,51 @@
         .menu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px 40px;
+            gap: 18px 25px;
         }
 
         .menu-item {
+            background: #fffaf6;
+            border: 1px solid #ffd1b3;
+            border-radius: 14px;
+            padding: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .item-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px dashed #eee;
+            gap: 10px;
         }
 
-        .item-name { font-weight: 700; font-size: 0.95rem; color: #222; }
-        .item-price { color: var(--primary-red); font-weight: 900; font-size: 1.1rem; }
+        .item-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #222;
+        }
 
-        .bebidas-section { margin-top: 40px; }
+        .item-price {
+            color: var(--primary-red);
+            font-weight: 900;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        .item-spec {
+            margin-top: 8px;
+            background: white;
+            border-left: 4px solid var(--primary-orange);
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .bebidas-section {
+            margin-top: 40px;
+        }
 
         .footer-note {
             margin-top: 40px;
@@ -93,7 +133,6 @@
             font-weight: 700;
         }
 
-        /* --- BOTÓN WHATSAPP --- */
         .whatsapp-container {
             position: fixed;
             bottom: 25px;
@@ -136,21 +175,41 @@
             background-color: #128c7e;
         }
 
-        .whatsapp-icon { width: 24px; height: 24px; fill: white; }
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-5px);}
-            60% {transform: translateY(-3px);}
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
         }
 
         @media (max-width: 600px) {
-            .menu-grid { grid-template-columns: 1fr; }
-            .container { margin: 10px; padding: 20px; }
-            h1 { font-size: 1.6rem; }
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -163,32 +222,216 @@
 
 <div class="container">
     <h2 class="section-title">Nuestros Platos</h2>
+
     <div class="menu-grid">
-        <div class="menu-item"><span class="item-name">Sancocho de Bagre</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">Salvaje</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">Guatita</span><span class="item-price">$3.25</span></div>
-        <div class="menu-item"><span class="item-name">½ Guatita</span><span class="item-price">$2.00</span></div>
-        <div class="menu-item"><span class="item-name">Mixta</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">½ Mixta</span><span class="item-price">$3.25</span></div>
-        <div class="menu-item"><span class="item-name">Americana</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">½ Americana</span><span class="item-price">$3.25</span></div>
-        <div class="menu-item"><span class="item-name">Pollo con Guata</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">Encebollado</span><span class="item-price">$3.50</span></div>
-        <div class="menu-item"><span class="item-name">½ Encebollado</span><span class="item-price">$3.00</span></div>
-        <div class="menu-item"><span class="item-name">Bandera</span><span class="item-price">$4.75</span></div>
-        <div class="menu-item"><span class="item-name">½ Bandera</span><span class="item-price">$4.00</span></div>
-        <div class="menu-item"><span class="item-name">Ceviche de Camarón</span><span class="item-price">$6.75</span></div>
-        <div class="menu-item"><span class="item-name">½ Ceviche de Camarón</span><span class="item-price">$5.00</span></div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Sancocho de Bagre</span>
+                <span class="item-price">$3.50</span>
+            </div>
+            <div class="item-spec">
+                Caldo tradicional preparado con bagre, yuca, verde y aliños de la casa.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Salvaje</span>
+                <span class="item-price">$3.50</span>
+            </div>
+            <div class="item-spec">
+                Plato especial de la casa con una mezcla de caldo de bagre, guatita, pescado y acompañantes.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Guatita</span>
+                <span class="item-price">$3.25</span>
+            </div>
+            <div class="item-spec">
+                Preparada con maní, papa, arroz y ensalada.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">½ Guatita</span>
+                <span class="item-price">$2.00</span>
+            </div>
+            <div class="item-spec">
+                Porción pequeña de guatita, ideal para niños.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Mixta</span>
+                <span class="item-price">$3.50</span>
+            </div>
+            <div class="item-spec">
+                Plato completo de guatita con presa de pescado servida con arroz.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">½ Mixta</span>
+                <span class="item-price">$3.25</span>
+            </div>
+            <div class="item-spec">
+                Media porción del plato mixta con los acompañantes.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Americana</span>
+                <span class="item-price">$3.50</span>
+            </div>
+            <div class="item-spec">
+                Plato completo de guatita con carne de res en estofado servida con arroz.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">½ Americana</span>
+                <span class="item-price">$3.25</span>
+            </div>
+            <div class="item-spec">
+                Media porción del plato americana con los acompañantes.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Pollo con Guata</span>
+                <span class="item-price">$3.50</span>
+            </div>
+            <div class="item-spec">
+                Plato completo de pollo y guatita acompañada con arroz y ensalada.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Encebollado</span>
+                <span class="item-price">$3.50</span>
+            </div>
+            <div class="item-spec">
+                Sopa típica con pescado, yuca, cebolla curtida y su porción de chifle o arroz.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">½ Encebollado</span>
+                <span class="item-price">$3.00</span>
+            </div>
+            <div class="item-spec">
+                Media porción de encebollado con el mismo sabor tradicional.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Bandera</span>
+                <span class="item-price">$4.75</span>
+            </div>
+            <div class="item-spec">
+                Plato con guatita, arroz y ceviche de camarón.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">½ Bandera</span>
+                <span class="item-price">$4.00</span>
+            </div>
+            <div class="item-spec">
+                Medio plato con guatita, arroz y ceviche de camarón.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">Ceviche de Camarón</span>
+                <span class="item-price">$6.75</span>
+            </div>
+            <div class="item-spec">
+                Camarón preparado con salsa especial, cebolla, tomate, limón y con su porción de arroz o chifle.
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-header">
+                <span class="item-name">½ Ceviche de Camarón</span>
+                <span class="item-price">$5.00</span>
+            </div>
+            <div class="item-spec">
+                Media porción de ceviche de camarón con el sabor fresco de la casa.
+            </div>
+        </div>
+
     </div>
 
     <div class="bebidas-section">
         <h2 class="section-title">Bebidas</h2>
+
         <div class="menu-grid">
-            <div class="menu-item"><span class="item-name">Horchata / Fresco</span><span class="item-price">$0.50</span></div>
-            <div class="menu-item"><span class="item-name">Jarra Horchata / Fresco</span><span class="item-price">$3.00</span></div>
-            <div class="menu-item"><span class="item-name">Cola de Litro</span><span class="item-price">$1.75</span></div>
-            <div class="menu-item"><span class="item-name">Cola Personal</span><span class="item-price">$0.50</span></div>
-            <div class="menu-item"><span class="item-name">Café</span><span class="item-price">$0.50</span></div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Horchata / Fresco</span>
+                    <span class="item-price">$0.50</span>
+                </div>
+                <div class="item-spec">
+                    Bebida refrescante para acompañar tus platos favoritos.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Jarra Horchata / Fresco</span>
+                    <span class="item-price">$3.00</span>
+                </div>
+                <div class="item-spec">
+                    Ideal para compartir en familia o entre amigos.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Cola de Litro</span>
+                    <span class="item-price">$1.75</span>
+                </div>
+                <div class="item-spec">
+                    Bebida gaseosa de litro para acompañar tu pedido.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Cola Personal</span>
+                    <span class="item-price">$0.50</span>
+                </div>
+                <div class="item-spec">
+                    Presentación personal, práctica para una sola persona.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Café</span>
+                    <span class="item-price">$0.50</span>
+                </div>
+                <div class="item-spec">
+                    Café caliente para acompañar o cerrar tu comida.
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -199,6 +442,7 @@
 
 <div class="whatsapp-container">
     <div class="whatsapp-badge">🟢 Estamos atendiendo</div>
+
     <a href="https://wa.me/593990380360?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido%20de%20El%20Chinito%202" class="whatsapp-btn" target="_blank">
         <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
@@ -208,7 +452,4 @@
 </div>
 
 </body>
-
 </html>
-
-
